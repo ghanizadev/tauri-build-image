@@ -30,4 +30,4 @@ RUN $HOME/.cargo/bin/rustup target add i686-unknown-linux-gnu
 
 RUN $HOME/.cargo/bin/rustup target add x86_64-unknown-linux-gnu
 
-ENV PATH=/root/.cargo/bin:$PATH
+ENV PATH=$HOME/.cargo/bin:$PATH
