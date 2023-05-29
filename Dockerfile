@@ -30,4 +30,6 @@ RUN $HOME/.cargo/bin/rustup target add i686-unknown-linux-gnu
 
 RUN $HOME/.cargo/bin/rustup target add x86_64-unknown-linux-gnu
 
+RUN $HOME/.cargo/bin/cargo install tauri-cli -y
+
 ENV PATH=$HOME/.cargo/bin:$PATH
