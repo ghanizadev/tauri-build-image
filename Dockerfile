@@ -1,7 +1,7 @@
 FROM ubuntu:22.10
 
-RUN sudo apt-get update && \
-    sudo apt-get install -y libwebkit2gtk-4.0-dev \
+RUN apt update && \
+    apt install -y libwebkit2gtk-4.0-dev \
         build-essential \
         curl \
         wget \
@@ -14,7 +14,7 @@ RUN sudo apt-get update && \
         llvm \
         nsis \
         libclang-dev && \
-    sudo apt-get clean
+    apt-get clean
 
 
 RUN curl https://sh.rustup.rs -sSf | \
@@ -30,9 +30,9 @@ RUN $HOME/.cargo/bin/rustup target add i686-unknown-linux-gnu
 
 RUN $HOME/.cargo/bin/rustup target add x86_64-unknown-linux-gnu
 
-RUN $HOME/.cargo/bin/cargo install tauri-cli -y
+RUN $HOME/.cargo/bin/cargo install tauri-cli
 
-RUN $HOME/.cargo/bin/cargo install cargo-tarpaulin -y
+RUN $HOME/.cargo/bin/cargo install cargo-tarpaulin
 
 RUN echo "export PATH=${HOME}/.cargo/bin:${PATH}" >> /root/.bashrc
 
